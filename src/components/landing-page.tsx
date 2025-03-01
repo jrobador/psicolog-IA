@@ -92,23 +92,30 @@ export default function LandingPage() {
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </header>
 
-        <main className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center text-center">
+        <main className="container mx-auto px-4 py-12 md:py-16 lg:py-24 flex flex-col items-center text-center">
           <motion.h2
-            className={`text-4xl md:text-6xl font-bold mb-6 transition-colors duration-1000 ${
-              theme === "light" ? "text-[#5C4A36]" : "text-indigo-100"
-            }`}
-            initial={false}
-            animate={{
-              scale: [1, 1.01, 1],
-              transition: { duration: 1.5, ease: "easeInOut" },
-            }}
-          >
-            Inteligencia Terapéutica
+              className={`font-normal transition-colors duration-1000 mx-auto px-4 
+                text-[56px] sm:text-[76px] md:text-[96px] lg:text-[120px] xl:text-[140px]
+                leading-[1.1] sm:leading-[1.05] md:leading-[1] lg:leading-[1]
+                max-w-[15ch] sm:max-w-[12ch] md:max-w-[12ch] lg:max-w-[12ch]
+                tracking-[-0.02em] sm:tracking-[-0.03em] md:tracking-[-0.04em] ${
+                theme === "light" ? "text-[#5C4A36]" : "text-indigo-100"
+              }`}
+              style={{
+                fontFamily: '"Gt Super Text", "Times New Roman", serif',
+              }}
+              initial={false}
+              animate={{
+                scale: [1, 1.01, 1],
+                transition: { duration: 1.5, ease: "easeInOut" },
+              }}
+            >
+              Inteligencia Terapéutica
           </motion.h2>
           <motion.p
-            className={`text-xl md:text-2xl max-w-3xl mb-12 transition-colors duration-1000 ${
-              theme === "light" ? "text-[#725D45]" : "text-indigo-200"
-            }`}
+            className={`sm:text-xl md:text-2xl lg:text-3xl max-w-[85%] sm:max-w-[75%] md:max-w-3xl 
+              mb-8 sm:mb-12 lg:mb-16 mt-6 sm:mt-8 lg:mt-10 transition-colors duration-1000 
+              ${theme === "light" ? "text-[#725D45]" : "text-indigo-200"}`}
             initial={false}
             animate={{
               opacity: [0.9, 1],
@@ -118,7 +125,7 @@ export default function LandingPage() {
             Combinando la empatía humana con la inteligencia artificial para brindar un mejor apoyo en materia de salud mental para todos.
           </motion.p>
           <motion.div
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-6"
             initial={false}
             animate={{
               scale: [1, 1.02, 1],
@@ -126,25 +133,15 @@ export default function LandingPage() {
             }}
           >
             <Button
-              size="lg"
-              className={`transition-all duration-1000 ${
-                theme === "light"
-                  ? "bg-[#B69B7D] hover:bg-[#A38B70] text-[#FEFBF7] shadow-lg hover:shadow-xl"
-                  : "bg-indigo-700 hover:bg-indigo-800 text-indigo-50"
-              }`}
-            >
-              Empezar
-            </Button>
-            <Button
               variant="outline"
               size="lg"
-              className={`transition-all duration-1000 ${
+              className={`h-14 px-8 text-lg font-medium animate-shimmer bg-[length:200%_100%] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-offset-2 hover:scale-105 ${
                 theme === "light"
-                  ? "border-[#B69B7D] text-[#5C4A36] hover:bg-[#B69B7D] hover:text-[#FEFBF7] shadow-lg hover:shadow-xl"
-                  : "border-indigo-400 text-indigo-400 hover:bg-indigo-950"
+                  ? "border-2 border-[#725D45] bg-[linear-gradient(110deg,#5C4A36,45%,#8B7355,55%,#5C4A36)] text-[#FEFBF7] shadow-[0_0_20px_rgba(139,115,85,0.3)] hover:shadow-[0_0_25px_rgba(139,115,85,0.45)] focus:ring-[#725D45] focus:ring-offset-[#FEFBF7]"
+                  : "border-2 border-indigo-600 bg-[linear-gradient(110deg,#312e81,45%,#4f46e5,55%,#312e81)] text-indigo-50 shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_25px_rgba(79,70,229,0.45)] focus:ring-indigo-400 focus:ring-offset-slate-950"
               }`}
             >
-              Más información
+              Comenzar
             </Button>
           </motion.div>
         </main>
@@ -160,7 +157,7 @@ export default function LandingPage() {
           >
             {[
               {
-                title: "Información basada en inteligencia artificial",
+                title: "Insights Potenciados por IA",
                 description:
                   "Algoritmos avanzados analizan patrones para proporcionar recomendaciones terapéuticas personalizadas.",
               },
@@ -170,7 +167,7 @@ export default function LandingPage() {
               },
               {
                 title: "Soporte accesible",
-                description: "Disponible las 24 horas, los 7 días de la semana, lo que hace que el apoyo de salud mental sea accesible siempre que lo necesite.",
+                description: "Disponible las 24 horas, los 7 días de la semana, lo que hace que el apoyo de salud mental sea accesible cuando lo necesites.",
               },
             ].map((feature, index) => (
               <motion.div
